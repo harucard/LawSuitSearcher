@@ -1,13 +1,7 @@
-import React from 'react'
+import React from "react";
 
-function ResultField () {
-    return (
-        <>
-           <div id="result">
-                
-            </div>
-        </>
-    )
+function ResultField() {
+  return <div id="result" />;
 }
 
 export default ResultField;

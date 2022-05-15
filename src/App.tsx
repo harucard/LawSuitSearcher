@@ -1,20 +1,15 @@
-import React from 'react';
-import ResultField from './components/search-result/ResultField';
-import Search from './components/search/Search';
+import React from "react";
 
-
+import NavBar from "./components/navbar/Navbar";
+import Search from "./components/search-bar/SearchBar";
+import ResultField from "./components/search-result/ResultField";
 
 function App() {
- 
   return (
     <div className="App">
-      <div className='navbar'>
-          <img alt="Digesto" src='logo-ip.png'></img>
-      </div>
-      <div className='navbar-side'>
-      </div>
-     <Search/>
-     <ResultField/>
+      <NavBar />
+      <Search />
+      <ResultField />
     </div>
   );
 }
