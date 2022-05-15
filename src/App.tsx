@@ -1,4 +1,6 @@
 import React from 'react';
+import ResultField from './components/search-result/ResultField';
+import Search from './components/search/Search';
 
 
 
@@ -11,10 +13,8 @@ function App() {
       </div>
       <div className='navbar-side'>
       </div>
-      <div>
-        <input placeholder='Informe número do processo' type="text" />
-      <button >Buscar</button>
-      </div>
+     <Search/>
+     <ResultField/>
     </div>
   );
 }
