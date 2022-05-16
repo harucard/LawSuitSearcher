@@ -6,19 +6,23 @@ export const NavbarContainer = styled.nav`
   background-color: black;
   display: flex;
   flex-direction: row;
+  @media (max-width: 700px) {
+    height: 60px;
+  }
 `;
 
 export const LeftContainer = styled.div`
-  flex: 10%;
+  flex: 12%;
   display: flex;
   align-items: center;
   background-color: #fff;
+  padding: 0;
 `;
 
 export const RightContainer = styled.div`
-  flex: 90%;
+  flex: 88%;
   display: flex;
-  background-image: linear-gradient(180deg, #5f0c16, #920606);
+  background-color: white;
 `;
 
 export const NavBarInnerContainer = styled.div`
@@ -28,14 +32,14 @@ export const NavBarInnerContainer = styled.div`
 `;
 
 export const Logo1 = styled.img`
-  margin: 10px;
+  margin: 5px;
   height: auto;
   @media (max-width: 700px) {
     display: none;
   }
 `;
 export const Logo2 = styled.img`
-  margin: 10px;
+  margin: 5px;
   height: auto;
   filter: invert(9%) sepia(86%) saturate(6260%) hue-rotate(8deg) brightness(82%)
     contrast(106%);

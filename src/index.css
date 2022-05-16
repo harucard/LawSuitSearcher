@@ -2,7 +2,10 @@
 
 html{
   margin:0;
-  background-color: #ebedef;
+  /* background-color: #ebedef; */
+  background-image: linear-gradient(90deg, #5f0c16, #920606);
+  
+  font-family: 'Bitter', serif;
 }
 body {
   margin: 0;
