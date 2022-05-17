@@ -1,9 +1,13 @@
-import React from "react";
+import React, { Children } from "react";
 
 import { FieldContainer } from "./styles";
 
-function ResultField() {
-  return <FieldContainer />;
+type Props = {
+  children: React.ReactNode;
+};
+
+function ResultField({ children }: Props): React.ReactElement {
+  return <FieldContainer>{children}</FieldContainer>;
 }
 
 export default ResultField;

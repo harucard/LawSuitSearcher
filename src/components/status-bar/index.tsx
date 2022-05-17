@@ -4,7 +4,7 @@ const title = (): string => {
   return "Resultados da Pesquisa";
 };
 
-function returnStatusBar() {
+function returnStatusBar(): React.ReactElement {
   return <StatusBar title={title()} />;
 }
 

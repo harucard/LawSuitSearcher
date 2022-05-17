@@ -6,7 +6,6 @@ import { SearchContainer, InputSearch, Label, InputContainer } from "./styles";
 function SearchBar({
   onkeyDown,
   onChange,
-  value,
 }: InferProps<typeof SearchBar.propTypes>): React.ReactElement {
   const inputEl = useRef(null);
 
@@ -30,7 +29,6 @@ function SearchBar({
 SearchBar.propTypes = {
   onkeyDown: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
 };
 
 export default SearchBar;

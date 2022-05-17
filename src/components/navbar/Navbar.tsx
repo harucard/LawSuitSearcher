@@ -12,7 +12,7 @@ import {
   Logo2,
 } from "./styles";
 
-function NavBar() {
+function NavBar(): React.ReactElement {
   return (
     <NavbarContainer>
       <NavBarInnerContainer>

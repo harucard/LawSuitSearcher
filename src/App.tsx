@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import NavBar from "./components/navbar/Navbar";
 import Search from "./components/search-bar";
-import ResultField from "./components/search-result/ResultField";
+import ResultField from "./components/search-result";
 import StatusBar from "./components/status-bar";
 
 function App() {
