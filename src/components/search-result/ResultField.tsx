@@ -1,5 +1,3 @@
-import React, { Children } from "react";
-
 import { FieldContainer } from "./styles";
 
 type Props = {
