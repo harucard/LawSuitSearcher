@@ -5,7 +5,6 @@ import { selectStatus } from "../../redux/reducers/standardTypesReducer";
 import { SearchContainer, InputSearch, Label, InputContainer } from "./styles";
 
 function SearchBar({
-  onkeydown,
   onkeychange,
   onClick,
 }: InferProps<typeof SearchBar.propTypes>): React.ReactElement {
@@ -16,7 +15,6 @@ function SearchBar({
         <InputSearch
           id="search-input"
           disabled={!status}
-          onKeyDown={onkeydown}
           onChange={onkeychange}
           placeholder="Informe número do processo"
         />
@@ -29,7 +27,6 @@ function SearchBar({
 }
 
 SearchBar.propTypes = {
-  onkeydown: PropTypes.func.isRequired,
   onkeychange: PropTypes.func.isRequired,
   onClick: PropTypes.func.isRequired,
 };

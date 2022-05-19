@@ -1,12 +1,7 @@
 import { useSelector } from "react-redux";
 
-import { selectData } from "../../redux/reducers/lawsuitReducer";
-import {
-  selectLoadState,
-  selectMalFormed,
-  selectNotFound,
-  selectSuccess,
-} from "../../redux/reducers/sliceReducer";
+import { selectData, selectStatus } from "../../redux/reducers/lawsuitReducer";
+import { selectMalFormed } from "../../redux/reducers/sliceReducer";
 import MalformedNumber from "./MalformedNumber";
 import NotFound from "./NotFound";
 import ResultField from "./ResultField";
@@ -24,20 +19,23 @@ const theme: IThemeconfig = {
 };
 
 function returnResultField(): React.ReactElement {
-  const load = useSelector(selectLoadState);
   const malformed = useSelector(selectMalFormed);
-  const notfound = useSelector(selectNotFound);
-  const success = useSelector(selectSuccess);
   const data = useSelector(selectData);
+  const status = useSelector(selectStatus);
 
   return (
     <ResultField>
-      {!!load && (
+      {status === "reading" && (
         <SearcherSpinner color={theme.color} loading={theme.loading} />
       )}
       {!!malformed && <MalformedNumber />}
-      {!!notfound && <NotFound />}
-      {!!success && <ShowInfo getData={data} />}
+      {status === "finished" &&
+        Object.keys(data).indexOf("status_op") !== -1 && <NotFound />}
+      {status === "finished" &&
+        Object.keys(data).length > 1 &&
+        Object.keys(data).indexOf("status_op") === -1 && (
+          <ShowInfo getData={data} />
+        )}
     </ResultField>
   );
 }

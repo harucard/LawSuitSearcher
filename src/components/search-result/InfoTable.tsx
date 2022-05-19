@@ -61,43 +61,45 @@ function InfoTable({ instance }: any): React.ReactElement {
             </TR>
           </THead>
           <TBody>
-            {instance.map((item: any) => {
-              return (
-                <TR key={`tr${item[1]}${item[3]}`}>
-                  <TD key={`name${item[1]}${item[3]}`}>{item[3]}</TD>
-                  <TD key={`cnpj${item[1]}${item[4]}`}>
-                    {item[4] || "Não Informado"}
-                  </TD>
-                  <TD key={`cpf${item[1]}${item[5]}`}>
-                    {item[5] || "Não Informado"}
-                  </TD>
-                  <TD key={`doc${item[1]}${item[6]}`}>
-                    {item[6] || "Não Informado"}
-                  </TD>
-                  <TD key={`rel${item[1]}${item[8]}`}>
-                    {item[8] || "Não Informado"}
-                  </TD>
-                  <TD>
-                    {Object.keys(item[9]).length !== 0 ? (
-                      <Label
-                        onClick={() => {
-                          setContent(item[9]);
-                          handleOpenModal();
-                        }}
-                      >
-                        <i className="fas fa-info-circle" />
-                      </Label>
-                    ) : (
-                      "Sem Advogado"
-                    )}
-                  </TD>
-                  <TD>{item[10] ? "sim" : "não"}</TD>
-                  <TD>{item[11] ? "sim" : "não"}</TD>
-                  <TD>{item[12] ? "sim" : "não"}</TD>
-                  <TD>{item[13] ? "sim" : "não"}</TD>
-                </TR>
-              );
-            })}
+            {instance
+              ? instance.map((item: any) => {
+                  return (
+                    <TR key={`tr${item[1]}${item[3]}`}>
+                      <TD key={`name${item[1]}${item[3]}`}>{item[3]}</TD>
+                      <TD key={`cnpj${item[1]}${item[4]}`}>
+                        {item[4] || "Não Informado"}
+                      </TD>
+                      <TD key={`cpf${item[1]}${item[5]}`}>
+                        {item[5] || "Não Informado"}
+                      </TD>
+                      <TD key={`doc${item[1]}${item[6]}`}>
+                        {item[6] || "Não Informado"}
+                      </TD>
+                      <TD key={`rel${item[1]}${item[8]}`}>
+                        {item[8] || "Não Informado"}
+                      </TD>
+                      <TD>
+                        {Object.keys(item[9]).length !== 0 ? (
+                          <Label
+                            onClick={() => {
+                              setContent(item[9]);
+                              handleOpenModal();
+                            }}
+                          >
+                            <i className="fas fa-info-circle" />
+                          </Label>
+                        ) : (
+                          "Sem Advogado"
+                        )}
+                      </TD>
+                      <TD>{item[10] ? "sim" : "não"}</TD>
+                      <TD>{item[11] ? "sim" : "não"}</TD>
+                      <TD>{item[12] ? "sim" : "não"}</TD>
+                      <TD>{item[13] ? "sim" : "não"}</TD>
+                    </TR>
+                  );
+                })
+              : ""}
           </TBody>
         </CustomTable>
       </TableContainer>

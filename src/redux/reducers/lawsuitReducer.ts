@@ -41,7 +41,7 @@ export const types = createSlice({
   },
 });
 
-export const { findLawSuit } = types.actions;
+export const { findLawSuit, changeStatus } = types.actions;
 export const selectData = (state: RootState) => state.lawSuit.data;
 export const selectStatus = (state: RootState) => state.lawSuit.status;
 export default types.reducer;
