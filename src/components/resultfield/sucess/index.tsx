@@ -1,6 +1,7 @@
-import useInstance from "../../hooks/useInstance";
-import InfoTable from "./InfoTable";
-import { InfoContainer, InfoBar, InfoShow } from "./styles";
+import useInstance from "../../../hooks/useInstance";
+import { InfoContainer, InfoBar, InfoShow } from "../styles";
+import MovInfoTable from "./movinfo/MovInfoTable";
+import SectionTable from "./sectioninfo/SectionTable";
 
 type Data = {
   getData: any;
@@ -14,7 +15,9 @@ function ShowInfo({ getData }: Data) {
       <InfoBar>Instância</InfoBar>
       <InfoShow>{getInstance(getData.instancia)}</InfoShow>
       <InfoBar>Partes</InfoBar>
-      <InfoTable instance={getData.partes} />
+      <SectionTable instance={getData.partes} />
+      <InfoBar>Movimentações do processo</InfoBar>
+      <MovInfoTable content={getData.movs} />
     </InfoContainer>
   );
 }

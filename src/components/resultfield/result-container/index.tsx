@@ -1,12 +1,15 @@
 import { useSelector } from "react-redux";
 
-import { selectData, selectStatus } from "../../redux/reducers/lawsuitReducer";
-import { selectMalFormed } from "../../redux/reducers/sliceReducer";
-import MalformedNumber from "./MalformedNumber";
-import NotFound from "./NotFound";
+import {
+  selectData,
+  selectStatus,
+} from "../../../redux/reducers/lawsuitReducer";
+import { selectMalFormed } from "../../../redux/reducers/sliceReducer";
+import MalformedNumber from "../failed-status/mal-formed-number/MalformedNumber";
+import NotFound from "../failed-status/notfound/NotFound";
+import SearcherSpinner from "../loading/SearcherSpinner";
+import ShowInfo from "../sucess";
 import ResultField from "./ResultField";
-import SearcherSpinner from "./SearcherSpinner";
-import ShowInfo from "./ShowInfo";
 
 interface IThemeconfig {
   color: string;

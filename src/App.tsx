@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import NavBar from "./components/navbar/Navbar";
-import Search from "./components/search-bar";
-import ResultField from "./components/search-result";
-import StatusBar from "./components/status-bar";
+import ResultField from "./components/resultfield/result-container";
+import Search from "./components/search";
+import StatusBar from "./components/statusbar";
 import { getStandardTypes } from "./redux/reducers/standardTypesReducer";
 import { store } from "./redux/store";
 

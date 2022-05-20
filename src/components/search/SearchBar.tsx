@@ -7,6 +7,7 @@ import { SearchContainer, InputSearch, Label, InputContainer } from "./styles";
 function SearchBar({
   onkeychange,
   onClick,
+  onKeyUp,
 }: InferProps<typeof SearchBar.propTypes>): React.ReactElement {
   const status = useSelector(selectStatus);
   return (
@@ -17,6 +18,7 @@ function SearchBar({
           disabled={!status}
           onChange={onkeychange}
           placeholder="Informe número do processo"
+          onKeyUp={onKeyUp}
         />
         <Label onClick={onClick}>
           <i className="fas fa-search" />
@@ -29,6 +31,7 @@ function SearchBar({
 SearchBar.propTypes = {
   onkeychange: PropTypes.func.isRequired,
   onClick: PropTypes.func.isRequired,
+  onKeyUp: PropTypes.func.isRequired,
 };
 
 export default SearchBar;

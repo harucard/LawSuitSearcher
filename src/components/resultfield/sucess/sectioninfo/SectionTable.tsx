@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 
-import LawyerInfo from "./LawyerModal";
 import {
   TableContainer,
   CustomTable,
@@ -11,9 +10,10 @@ import {
   TBody,
   TH,
   Label,
-} from "./styles";
+} from "../../styles";
+import LawyerModalContent from "./LawyerModalContent";
 
-function InfoTable({ instance }: any): React.ReactElement {
+function LawyerTable({ instance }: any): React.ReactElement {
   const [modalIsOpen, setIsopen] = useState(false);
   const [modalContent, setContent] = useState("");
 
@@ -39,9 +39,9 @@ function InfoTable({ instance }: any): React.ReactElement {
         style={customStyles}
       >
         {modalContent !== "" ? (
-          <LawyerInfo content={modalContent} />
+          <LawyerModalContent content={modalContent} />
         ) : (
-          <p>nao</p>
+          ""
         )}
       </Modal>
       <TableContainer>
@@ -107,4 +107,4 @@ function InfoTable({ instance }: any): React.ReactElement {
   );
 }
 
-export default InfoTable;
+export default LawyerTable;

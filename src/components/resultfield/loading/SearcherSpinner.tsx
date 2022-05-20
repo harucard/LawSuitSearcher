@@ -1,7 +1,12 @@
 import PropTypes, { InferProps } from "prop-types";
 import { ClipLoader } from "react-spinners";
 
-import { SpinnerContainer, TextContainer, ClipContainer, Text } from "./styles";
+import {
+  SpinnerContainer,
+  TextContainer,
+  ClipContainer,
+  Text,
+} from "../styles";
 
 function SearcherSpinner({
   color,

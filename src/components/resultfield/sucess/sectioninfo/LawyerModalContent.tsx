@@ -1,10 +1,10 @@
 import Modal from "react-modal";
 
-import { CustomTable, THead, TR, TH, TBody } from "./styles";
+import { CustomTable, THead, TR, TH, TBody } from "../../styles";
 
 Modal.setAppElement("#root");
 
-function LawyerInfo({ content }: any) {
+function ModalContent({ content }: any) {
   return (
     <CustomTable>
       <THead>
@@ -39,4 +39,4 @@ function LawyerInfo({ content }: any) {
   );
 }
 
-export default LawyerInfo;
+export default ModalContent;

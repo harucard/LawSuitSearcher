@@ -7,36 +7,47 @@ import {
   setmalformedNumber,
   unsetmalformedNumber,
 } from "../../redux/reducers/sliceReducer";
-import { store } from "../../redux/store";
+import { AppDispatch } from "../../redux/store";
 import SearchBar from "./SearchBar";
 
-export type AppDispatch = typeof store.dispatch;
-
 function returnSearchBar(): React.ReactElement {
-  const act = useDispatch();
-
   const { tesIfmatch } = useTestMatch();
   const dispatch: AppDispatch = useDispatch();
-
   const [inputvalue, setInputValue] = useState("");
 
   const handleOnChange = (e: React.FormEvent<HTMLInputElement>) => {
     setInputValue(e.currentTarget.value);
   };
 
-  const handleClick = () => {
-    act(unsetmalformedNumber());
+  const sendRequest = () => {
+    dispatch(unsetmalformedNumber());
     dispatch(changeStatus("stopped"));
     if (tesIfmatch(inputvalue)) {
-      console.log("verdadeiro");
       dispatch(search(inputvalue));
     } else {
-      console.log("falso");
-      act(setmalformedNumber());
+      dispatch(setmalformedNumber());
     }
   };
 
-  return <SearchBar onClick={handleClick} onkeychange={handleOnChange} />;
+  const handleKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (inputvalue !== "" && e.key === "Enter") {
+      sendRequest();
+    }
+  };
+
+  const handleClick = () => {
+    if (inputvalue !== "") {
+      sendRequest();
+    }
+  };
+
+  return (
+    <SearchBar
+      onKeyUp={handleKeyUp}
+      onClick={handleClick}
+      onkeychange={handleOnChange}
+    />
+  );
 }
 
 export default returnSearchBar;

@@ -1,4 +1,4 @@
-import { FieldContainer } from "./styles";
+import { FieldContainer } from "../styles";
 
 type Props = {
   children: React.ReactNode;

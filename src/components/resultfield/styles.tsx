@@ -67,9 +67,18 @@ export const NotFoundContainer = styled.p`
 export const InfoContainer = styled.div`
   width: 100%;
 `;
+export const ModalContainer = styled.div`
+  text-align: justify;
+  word-wrap: break-word;
+  font-size: 20px;
+  line-height: 1.6;
+  padding: 10px;
+`;
 
 export const InfoBar = styled.div`
   margin-top: 30px;
+  color: #920606;
+  font-weight: bold;
   background-color: #ccc;
   width: 100%;
   height: 30px;
@@ -91,8 +100,10 @@ export const TableContainer = styled.div`
 `;
 
 export const CustomTable = styled.table`
+  border-collapse: collapse;
   width: 100%;
   text-align: center;
+  margin-bottom: 10px;
 `;
 
 export const THead = styled.thead`
@@ -123,5 +134,21 @@ export const Label = styled.label`
 
   @media (max-width: 700px) {
     line-height: 40px;
+  }
+`;
+
+export const FailedContainer = styled.div`
+  color: #920606;
+  width: 50%;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  @media (max-width: 700px) {
+    font-size: 1em;
   }
 `;
