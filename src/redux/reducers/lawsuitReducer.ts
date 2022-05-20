@@ -1,5 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import moment from "moment";
+import { any } from "prop-types";
 
 import type { RootState } from "../store";
 
@@ -36,6 +38,14 @@ export const types = createSlice({
       return { ...state, status: "reading" };
     });
     builder.addCase(search.fulfilled, (state, { payload }) => {
+      if (payload.length) {
+        payload.movs.sort((a: any, b: any) => {
+          if (new Date(a[0]) < new Date(b[0])) return -1;
+          if (new Date(a[0]) > new Date(b[0])) return 1;
+          return 0;
+        });
+      }
+
       return { ...state, status: "finished", data: payload };
     });
   },

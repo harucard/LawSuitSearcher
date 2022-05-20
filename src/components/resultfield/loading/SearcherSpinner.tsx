@@ -5,6 +5,7 @@ import {
   SpinnerContainer,
   TextContainer,
   ClipContainer,
+  LoadingContainer,
   Text,
 } from "../styles";
 
@@ -13,14 +14,16 @@ function SearcherSpinner({
   loading,
 }: InferProps<typeof SearcherSpinner.propTypes>): React.ReactElement {
   return (
-    <SpinnerContainer>
-      <TextContainer>
-        <Text>Buscando..</Text>
-      </TextContainer>
-      <ClipContainer>
-        <ClipLoader color={color} loading={loading} />
-      </ClipContainer>
-    </SpinnerContainer>
+    <LoadingContainer>
+      <SpinnerContainer>
+        <TextContainer>
+          <Text>Buscando...</Text>
+        </TextContainer>
+        <ClipContainer>
+          <ClipLoader color={color} loading={loading} />
+        </ClipContainer>
+      </SpinnerContainer>
+    </LoadingContainer>
   );
 }
 

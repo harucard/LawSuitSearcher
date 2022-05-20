@@ -26,8 +26,11 @@ function LawyerTable({ instance }: any): React.ReactElement {
   const customStyles = {
     content: {
       height: "300px",
-      width: "700px",
+      width: "60%",
       margin: "20px auto",
+      display: "flex",
+      justiContent: "center",
+      padding: "20px",
     },
   };
 
@@ -45,7 +48,7 @@ function LawyerTable({ instance }: any): React.ReactElement {
         )}
       </Modal>
       <TableContainer>
-        <CustomTable>
+        <CustomTable className="table-striped">
           <THead>
             <TR>
               <TH>NOME</TH>
@@ -65,20 +68,22 @@ function LawyerTable({ instance }: any): React.ReactElement {
               ? instance.map((item: any) => {
                   return (
                     <TR key={`tr${item[1]}${item[3]}`}>
-                      <TD key={`name${item[1]}${item[3]}`}>{item[3]}</TD>
-                      <TD key={`cnpj${item[1]}${item[4]}`}>
+                      <TD className="section" key={`name${item[1]}${item[3]}`}>
+                        {item[3]}
+                      </TD>
+                      <TD className="section" key={`cnpj${item[1]}${item[4]}`}>
                         {item[4] || "Não Informado"}
                       </TD>
-                      <TD key={`cpf${item[1]}${item[5]}`}>
+                      <TD className="section" key={`cpf${item[1]}${item[5]}`}>
                         {item[5] || "Não Informado"}
                       </TD>
-                      <TD key={`doc${item[1]}${item[6]}`}>
+                      <TD className="section" key={`doc${item[1]}${item[6]}`}>
                         {item[6] || "Não Informado"}
                       </TD>
-                      <TD key={`rel${item[1]}${item[8]}`}>
+                      <TD className="section" key={`rel${item[1]}${item[8]}`}>
                         {item[8] || "Não Informado"}
                       </TD>
-                      <TD>
+                      <TD className="section">
                         {Object.keys(item[9]).length !== 0 ? (
                           <Label
                             onClick={() => {
@@ -92,10 +97,10 @@ function LawyerTable({ instance }: any): React.ReactElement {
                           "Sem Advogado"
                         )}
                       </TD>
-                      <TD>{item[10] ? "sim" : "não"}</TD>
-                      <TD>{item[11] ? "sim" : "não"}</TD>
-                      <TD>{item[12] ? "sim" : "não"}</TD>
-                      <TD>{item[13] ? "sim" : "não"}</TD>
+                      <TD className="section">{item[10] ? "sim" : "não"}</TD>
+                      <TD className="section">{item[11] ? "sim" : "não"}</TD>
+                      <TD className="section">{item[12] ? "sim" : "não"}</TD>
+                      <TD className="section">{item[13] ? "sim" : "não"}</TD>
                     </TR>
                   );
                 })

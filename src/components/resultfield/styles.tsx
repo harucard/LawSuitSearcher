@@ -28,37 +28,9 @@ export const ClipContainer = styled.div`
   justify-content: center;
 `;
 
-export const Text = styled.h2`
-  color: #920606;
-`;
-
-export const MalFormedContainer = styled.p`
-  color: #920606;
-  width: 50%;
+export const Text = styled.p`
   font-size: 2rem;
-  font-weight: bold;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  @media (max-width: 700px) {
-    font-size: 1em;
-  }
-`;
-
-export const NotFoundContainer = styled.p`
   color: #920606;
-  width: 50%;
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
   @media (max-width: 700px) {
     font-size: 1em;
   }
@@ -73,10 +45,13 @@ export const ModalContainer = styled.div`
   font-size: 20px;
   line-height: 1.6;
   padding: 10px;
+  @media (max-width: 700px) {
+    font-size: 0.9em;
+  }
 `;
 
 export const InfoBar = styled.div`
-  margin-top: 30px;
+  margin-top: 10px;
   color: #920606;
   font-weight: bold;
   background-color: #ccc;
@@ -91,6 +66,9 @@ export const InfoShow = styled.div`
   width: 100%;
   height: 30px;
   text-align: center;
+  @media (max-width: 700px) {
+    font-size: 12px;
+  }
 `;
 
 export const TableContainer = styled.div`
@@ -117,11 +95,13 @@ export const TR = styled.tr`
 
 export const TH = styled.th`
   padding: 7px 0;
+  text-align: center;
   color: #920606;
 `;
 
 export const TD = styled.td`
   padding: 7px 0;
+  text-align: center;
 `;
 
 export const TBody = styled.tbody`
@@ -137,17 +117,28 @@ export const Label = styled.label`
   }
 `;
 
-export const FailedContainer = styled.div`
+export const FailedContainer = styled.p`
+  position: relative;
   color: #920606;
-  width: 50%;
   font-size: 2rem;
-  font-weight: bold;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 40%;
+  left: 40%;
   -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  transform: translateY(-50%);
+
+  @media (max-width: 700px) {
+    font-size: 1em;
+    left: 30%;
+  }
+`;
+
+export const LoadingContainer = styled.div`
+  position: relative;
+  color: #920606;
+  font-size: 2rem;
+  top: 40%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translateY(-50%);
   @media (max-width: 700px) {
     font-size: 1em;
   }

@@ -1,7 +1,7 @@
 import { ModalContainer } from "../../styles";
 
 function MovModalContent({ content }: any) {
-  return <ModalContainer>{content}</ModalContainer>;
+  return <ModalContainer className="mov-modal">{content}</ModalContainer>;
 }
 
 export default MovModalContent;

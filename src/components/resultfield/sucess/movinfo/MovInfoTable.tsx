@@ -1,3 +1,4 @@
+import moment from "moment";
 import React, { useState } from "react";
 import Modal from "react-modal";
 
@@ -29,7 +30,7 @@ function MovInfo({ content }: any): React.ReactElement {
   const customStyles = {
     content: {
       height: "300px",
-      width: "700px",
+      width: "60%",
       margin: "20px auto",
     },
   };
@@ -43,7 +44,7 @@ function MovInfo({ content }: any): React.ReactElement {
         {modalContent !== "" ? <MovModalContent content={modalContent} /> : ""}
       </Modal>
       <TableContainer>
-        <CustomTable>
+        <CustomTable className="table-striped">
           <THead>
             <TR>
               <TH>Data</TH>
@@ -58,9 +59,13 @@ function MovInfo({ content }: any): React.ReactElement {
               ? content.map((item: any) => {
                   return (
                     <TR key={`tr${item[4]}${item[3]}`}>
-                      <TD key={`data${item[0]}${item[3]}`}>{item[0]}</TD>
-                      <TD key={`title${item[1]}${item[3]}`}>{item[1]}</TD>
-                      <TD>
+                      <TD className="mov" key={`data${item[0]}${item[3]}`}>
+                        {moment(item[0]).format("DD/MM/YYYY")}
+                      </TD>
+                      <TD className="mov" key={`title${item[1]}${item[3]}`}>
+                        {item[1]}
+                      </TD>
+                      <TD className="mov">
                         <Label
                           onClick={() => {
                             setContent(item[2]);
@@ -70,10 +75,10 @@ function MovInfo({ content }: any): React.ReactElement {
                           <i className="fas fa-info-circle" />
                         </Label>
                       </TD>
-                      <TD key={`judge${item[1]}${item[3]}`}>
+                      <TD className="mov" key={`judge${item[1]}${item[3]}`}>
                         {item[3] || "Não Informado"}
                       </TD>
-                      <TD>{getPattern(item[5][0])}</TD>
+                      <TD className="mov">{getPattern(item[5][0])}</TD>
                     </TR>
                   );
                 })
