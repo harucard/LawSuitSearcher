@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const StatusContainer = styled.div`
   height: 80px;
-  margin-left: 10px;
+  width: 100%;
+
   display: flex;
   color: #fff;
   font-size: 2em;

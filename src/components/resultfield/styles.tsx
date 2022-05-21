@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const FieldContainer = styled.div`
   margin: 10px auto;
-  width: 100%;
+  width: 100vw;
   height: 640px;
   background-color: #fff;
   border-radius: 5px;
@@ -117,16 +117,19 @@ export const Label = styled.label`
   }
 `;
 
-export const FailedContainer = styled.p`
+export const FailedContainer = styled.div`
   position: relative;
+  width: 80%;
+  word-wrap: break-word;
+  margin-right: 10px;
   color: #920606;
   font-size: 2rem;
-  top: 40%;
-  left: 40%;
   -ms-transform: translate(-50%, -50%);
+  top: 40%;
+  left: 10%;
   transform: translateY(-50%);
-
   @media (max-width: 700px) {
+    width: 60%;
     font-size: 1em;
     left: 30%;
   }

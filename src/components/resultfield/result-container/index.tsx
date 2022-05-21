@@ -6,6 +6,7 @@ import {
 } from "../../../redux/reducers/lawsuitReducer";
 import { selectMalFormed } from "../../../redux/reducers/sliceReducer";
 import MalformedNumber from "../failed-status/mal-formed-number/MalformedNumber";
+import NetworkError from "../failed-status/network-error/NetworkError";
 import NotFound from "../failed-status/notfound/NotFound";
 import SearcherSpinner from "../loading/SearcherSpinner";
 import ShowInfo from "../sucess";
@@ -36,9 +37,13 @@ function returnResultField(): React.ReactElement {
         Object.keys(data).indexOf("status_op") !== -1 && <NotFound />}
       {status === "finished" &&
         Object.keys(data).length > 1 &&
-        Object.keys(data).indexOf("status_op") === -1 && (
+        Object.keys(data).indexOf("status_op") === -1 &&
+        Object.keys(data).indexOf("config") === -1 && (
           <ShowInfo getData={data} />
         )}
+      {status === "finished" &&
+        Object.keys(data).length > 1 &&
+        Object.keys(data).indexOf("config") !== -1 && <NetworkError />}
     </ResultField>
   );
 }

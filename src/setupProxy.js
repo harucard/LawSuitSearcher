@@ -3,6 +3,8 @@ const {
   fixRequestBody,
 } = require("http-proxy-middleware");
 
+const TOKEN = "3013c791-18ea-48ff-b4ef-ad5cae624cb6";
+
 module.exports = function (app) {
   app.use(
     "/api",
@@ -10,10 +12,7 @@ module.exports = function (app) {
       target: "https://op.digesto.com.br",
       changeOrigin: true,
       onProxyReq: function onProxyReq(proxyReq, req, res) {
-        proxyReq.setHeader(
-          "Authorization",
-          `Bearer 0b137ecf-264f-4fe8-add9-b62aac242bcd`
-        );
+        proxyReq.setHeader("Authorization", `Bearer ${TOKEN}`);
       },
     })
   );

@@ -3,7 +3,8 @@
 html{
   margin:0;
   /* background-color: #ebedef; */
-  background-image: linear-gradient(90deg, #5f0c16, #920606);
+  /* background-image: linear-gradient(90deg, #5f0c16, #920606); */
+  background-color: #920606;
   
   font-family: 'Bitter', serif;
 }
@@ -11,6 +12,11 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+div#root {
+  margin:0;
+  width: 100%;
+  display: flex;
 }
 
 @media
@@ -82,4 +88,5 @@ td.lawyer-modal:nth-of-type(2):before { content: "OAB"; }
 td.lawyer-modal:nth-of-type(3):before { content: "CPF"; }
 td.lawyer-modal:nth-of-type(4):before { content: "UF"; }
 }
+
 
