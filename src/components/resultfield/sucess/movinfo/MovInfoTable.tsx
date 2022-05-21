@@ -15,7 +15,7 @@ import {
 } from "../../styles";
 import MovModalContent from "./MovModalContent";
 
-Modal.setAppElement("#root");
+if (process.env.NODE_ENV !== "test") Modal.setAppElement("#root");
 function MovInfo({ content }: any): React.ReactElement {
   const [modalIsOpen, setIsopen] = useState(false);
   const [modalContent, setContent] = useState("");

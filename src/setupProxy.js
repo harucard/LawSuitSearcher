@@ -11,7 +11,7 @@ module.exports = function (app) {
     createProxyMiddleware({
       target: "https://op.digesto.com.br",
       changeOrigin: true,
-      onProxyReq: function onProxyReq(proxyReq, req, res) {
+      onProxyReq: function onProxyReq(proxyReq) {
         proxyReq.setHeader("Authorization", `Bearer ${TOKEN}`);
       },
     })

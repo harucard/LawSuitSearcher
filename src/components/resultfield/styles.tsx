@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const FieldContainer = styled.div`
   margin: 10px auto;
   width: 100vw;
-  height: 640px;
+  min-height: 640px;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -11,7 +11,7 @@ export const FieldContainer = styled.div`
 `;
 
 export const SpinnerContainer = styled.div`
-  margin: 0;
+  margin-top: 10rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -94,6 +94,7 @@ export const TR = styled.tr`
 `;
 
 export const TH = styled.th`
+  font-size: 0.8em;
   padding: 7px 0;
   text-align: center;
   color: #920606;
@@ -121,7 +122,7 @@ export const FailedContainer = styled.div`
   position: relative;
   width: 80%;
   word-wrap: break-word;
-  margin-right: 10px;
+  margin-top: 10rem;
   color: #920606;
   font-size: 2rem;
   -ms-transform: translate(-50%, -50%);

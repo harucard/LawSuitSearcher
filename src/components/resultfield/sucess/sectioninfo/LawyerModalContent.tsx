@@ -2,7 +2,7 @@ import Modal from "react-modal";
 
 import { CustomTable, THead, TR, TH, TBody, TD } from "../../styles";
 
-Modal.setAppElement("#root");
+if (process.env.NODE_ENV !== "test") Modal.setAppElement("#root");
 
 function ModalContent({ content }: any) {
   return (

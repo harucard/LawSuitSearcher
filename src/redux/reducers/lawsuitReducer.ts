@@ -38,14 +38,16 @@ export const types = createSlice({
       return { ...state, status: "reading" };
     });
     builder.addCase(search.fulfilled, (state, { payload }) => {
-      if (payload.length) {
+      if (
+        Object.keys(payload).length > 1 &&
+        Object.keys(payload).indexOf("movs") !== -1
+      ) {
         payload.movs.sort((a: any, b: any) => {
           if (new Date(a[0]) < new Date(b[0])) return -1;
           if (new Date(a[0]) > new Date(b[0])) return 1;
           return 0;
         });
       }
-
       return { ...state, status: "finished", data: payload };
     });
   },
