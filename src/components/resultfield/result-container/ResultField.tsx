@@ -5,7 +5,9 @@ type Props = {
 };
 
 function ResultField({ children }: Props): React.ReactElement {
-  return <FieldContainer>{children}</FieldContainer>;
+  return (
+    <FieldContainer data-testeid="field-container">{children}</FieldContainer>
+  );
 }
 
 export default ResultField;

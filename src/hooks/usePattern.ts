@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { selectData } from "../redux/reducers/standardTypesReducer";
 
 const usePattern = () => {
-  const getPattern = (word: string) => {
+  const getPattern = (word: number[]) => {
     const param = word[0].toString() + word[1].toString();
     const pattern = useSelector(selectData);
 

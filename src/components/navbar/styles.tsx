@@ -41,8 +41,7 @@ export const Logo1 = styled.img`
 export const Logo2 = styled.img`
   margin: 5px;
   height: auto;
-  filter: invert(9%) sepia(86%) saturate(6260%) hue-rotate(8deg) brightness(82%)
-    contrast(106%);
+
   @media (min-width: 700px) {
     display: none;
   }

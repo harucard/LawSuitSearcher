@@ -22,7 +22,7 @@ export const InputContainer = styled.div`
   }
 `;
 
-export const InputSearch = styled.input`
+export const InputSearchContainer = styled.input`
   padding: 10px 20px;
   outline: none;
   border: none;

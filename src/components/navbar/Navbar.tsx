@@ -17,8 +17,8 @@ function NavBar(): React.ReactElement {
     <NavbarContainer>
       <NavBarInnerContainer>
         <LeftContainer>
-          <Logo1 src={LogoImg} />
-          <Logo2 src={LogoImg2} />
+          <Logo1 alt="logo1" src={LogoImg} />
+          <Logo2 alt="logo2" src={LogoImg2} />
         </LeftContainer>
         <RightContainer />
       </NavBarInnerContainer>

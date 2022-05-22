@@ -1,28 +1,19 @@
 import PropTypes, { InferProps } from "prop-types";
-import { useSelector } from "react-redux";
 
-import { selectStatus } from "../../redux/reducers/standardTypesReducer";
-import { SearchContainer, InputSearch, Label, InputContainer } from "./styles";
+import InputSearcher from "./InputSearch";
+import LabelBar from "./LabelComponent";
+import { SearchContainer, InputContainer } from "./styles";
 
 function SearchBar({
   onkeychange,
   onClick,
   onKeyUp,
 }: InferProps<typeof SearchBar.propTypes>): React.ReactElement {
-  const status = useSelector(selectStatus);
   return (
     <SearchContainer>
       <InputContainer>
-        <InputSearch
-          id="search-input"
-          disabled={!status}
-          onChange={onkeychange}
-          placeholder="Informe número do processo"
-          onKeyUp={onKeyUp}
-        />
-        <Label onClick={onClick}>
-          <i className="fas fa-search" />
-        </Label>
+        <InputSearcher onChange={onkeychange} onKeyUp={onKeyUp} />
+        <LabelBar onClick={onClick} />
       </InputContainer>
     </SearchContainer>
   );
