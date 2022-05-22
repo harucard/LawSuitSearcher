@@ -1,18 +1,18 @@
 # LawSuitSearcher
 
-## Available Scripts
-
-In the project directory, you can run:
+## Scripts Disponíveis
 
 ## `npm install`
 
-Install project libraries
+Instala as bibliotecas do projeto
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Inicia a aplicação em modo de desenvolvimento
+Abra [http://localhost:3000](http://localhost:3000) para visualizar no browser.
 
 ### `npm test`
 
-**Note: tests weren't implemented**
+Roda os testes
+
+**Necessario configura o arquivo setupProxy.js em ./src**
