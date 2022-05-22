@@ -15,4 +15,4 @@ Abra [http://localhost:3000](http://localhost:3000) para visualizar no browser.
 
 Roda os testes
 
-**Necessario configura o arquivo setupProxy.js em ./src**
+**Necessário configurar o arquivo setupProxy.js  que se encontra na pasta src**
