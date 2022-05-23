@@ -1,4 +1,4 @@
-import { MouseEventHandler, useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 
 import useTestMatch from "../../hooks/useTestMatch";

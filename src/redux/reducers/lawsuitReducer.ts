@@ -1,7 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import moment from "moment";
-import { any } from "prop-types";
 
 import type { RootState } from "../store";
 

@@ -3,7 +3,7 @@ const {
   fixRequestBody,
 } = require("http-proxy-middleware");
 
-const TOKEN = "3013c791-18ea-48ff-b4ef-ad5cae624cb6";
+const TOKEN = process.env.REACT_APP_API_TOKEN;
 
 module.exports = function (app) {
   app.use(
